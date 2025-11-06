@@ -1,0 +1,304 @@
+/* 🎅 Apple Christmas Glass Supreme Deluxe v2 by Nevio */
+
+/* Hintergrund */
+body {
+  background-image: url("https://static01.nyt.com/images/2018/11/04/arts/grinch-clip/grinch-clip-superJumbo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+    "Helvetica Neue", Arial, sans-serif;
+  color: #f5f5f7;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Glascontainer */
+.container {
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 60px 80px;
+  text-align: center;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+  animation: fadeInUp 1.4s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.container:hover {
+  transform: scale(1.03);
+  box-shadow: 0 40px 90px rgba(255, 255, 255, 0.1);
+}
+
+/* Titel */
+h1 {
+  font-size: 3.6rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  letter-spacing: -0.02em;
+  background: linear-gradient(270deg, #ff3333, #ff9900, #ffd700, #ff3333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 400%;
+  animation: shimmerSmooth 6s ease-in-out infinite;
+  text-shadow: 0 0 35px rgba(255, 140, 0, 0.25);
+}
+
+@keyframes shimmerSmooth {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Labels & Inputs */
+.input-label {
+  display: block;
+  font-size: 1.1rem;
+  margin-top: 30px;
+  margin-bottom: 14px;
+  color: #f5f5f7;
+  text-align: left;
+  opacity: 0.85;
+}
+
+input[type="text"] {
+  width: 100%;
+  max-width: 320px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  font-size: 1.1rem;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(8px);
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid #ff3b3b;
+  box-shadow: 0 0 25px rgba(255, 80, 80, 0.7), 0 0 45px rgba(255, 215, 0, 0.4);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Button */
+button {
+  width: 100%;
+  max-width: 320px;
+  margin-top: 30px;
+  padding: 15px 0;
+  border: none;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #ff2a2a, #c70000);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(255, 59, 48, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0)
+  );
+  transition: 0.6s;
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 15px 40px rgba(255, 0, 0, 0.5);
+}
+
+/* ✨ Wichtel Reveal Animation */
+#wichtelPartner {
+  display: inline-block;
+  font-weight: 700;
+  color: #ffd700;
+  font-size: 1.8rem;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
+    0 0 40px rgba(255, 215, 0, 0.7);
+  animation: revealPop 1.2s ease-out forwards, glowWave 3s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes revealPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.1) rotateY(180deg);
+    filter: blur(8px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.3) rotateY(0deg);
+    filter: blur(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes glowWave {
+  0%,
+  100% {
+    text-shadow: 0 0 20px #fff, 0 0 40px #ffd700, 0 0 80px #ff4d4d;
+  }
+  50% {
+    text-shadow: 0 0 30px #fff9c4, 0 0 70px #ff9999, 0 0 120px #ff4d4d;
+  }
+}
+
+/* ❄️ Schneeflocken sichtbar & leuchtend */
+#snowflakes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.snowflake {
+  position: absolute;
+  top: -10px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 40%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  border-radius: 50%;
+  opacity: 0.95;
+  animation: fall linear infinite, sway ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.9));
+}
+
+.snowflake:nth-child(3n) {
+  width: 6px;
+  height: 6px;
+  animation-duration: 10s, 3.5s;
+}
+
+.snowflake:nth-child(3n + 1) {
+  width: 8px;
+  height: 8px;
+  animation-duration: 14s, 4.2s;
+}
+
+.snowflake:nth-child(3n + 2) {
+  width: 10px;
+  height: 10px;
+  animation-duration: 18s, 5s;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 1;
+  }
+}
+
+@keyframes sway {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(25px);
+  }
+}
+
+/* Countdown + Made by */
+#countdown {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffd700;
+  font-size: 1.4rem;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+}
+
+#madeByNevio {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.5px;
+}
+
+/* Fade-in Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Responsiv */
+@media (max-width: 700px) {
+  body {
+    padding: 20px;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .container {
+    width: 100%;
+    margin-top: 60px;
+    padding: 40px 25px;
+    border-radius: 28px;
+  }
+
+  h1 {
+    font-size: 2.6rem;
+  }
+
+  #wichtelPartner {
+    font-size: 1.5rem;
+  }
+
+  #countdown {
+    font-size: 1.1rem;
+    bottom: 40px;
+  }
+}

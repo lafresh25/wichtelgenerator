@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WichtelGenerator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>🎄 WichtelGenerator</h1>
+
+      <div id="userInput">
+        <label for="name" class="input-label">Dein Vorname (klein):</label>
+        <input type="text" id="name" placeholder="Name eingeben" />
+
+        <label for="code" class="input-label">Code:</label>
+        <input type="text" id="userCode" placeholder="Code eingeben" />
+
+        <button onclick="checkUserCode()">✨ Wichtelpartner anzeigen</button>
+      </div>
+
+      <div id="output" style="display: none">
+        <p>
+          Dein Wichtelpartner ist:
+          <span id="wichtelPartner" class="reveal-name"></span>
+        </p>
+      </div>
+    </div>
+
+    <div id="snowflakes"></div>
+
+    <div id="madeByNevio">Made by Nevio</div>
+    <div id="countdown"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
